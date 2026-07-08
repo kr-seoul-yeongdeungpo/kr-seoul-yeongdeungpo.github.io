@@ -117,35 +117,454 @@
   ]
 }
   </script>
-  <style>
-:root { --fg:#1a1a2e; --muted:#5c5c72; --accent:#2d5bff; --bg:#ffffff; --card:#f6f7fb; --line:#e6e8f0; }
-* { box-sizing: border-box; }
-body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color:var(--fg); background:var(--bg); line-height:1.7; }
-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-header { padding: 2rem 0 1rem; border-bottom: 2px solid var(--line); margin-bottom: 1.5rem; }
-.eyebrow { color: var(--accent); font-weight: 600; margin: 0 0 .25rem; letter-spacing: .02em; }
-h1 { font-size: 2.4rem; margin: 0; }
-h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; padding-left: .6rem; border-left: 4px solid var(--accent); }
-section p { margin: .25rem 0 0; }
-ul { margin: .5rem 0 0; padding-left: 1.2rem; }
-li { margin: .25rem 0; }
-.facts, .symbols { list-style: none; padding: 1rem 1.2rem; background: var(--card); border-radius: 12px; }
-.faq details { border: 1px solid var(--line); border-radius: 10px; padding: .5rem .9rem; margin: .5rem 0; }
-.faq summary { cursor: pointer; font-weight: 600; }
-.faq details p { margin: .5rem 0 .25rem; color: var(--muted); }
-.sources { font-size: .9rem; color: var(--muted); }
-a { color: var(--accent); }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
-</style>
+  <script id="region-data" type="application/json">
+{
+  "characteristics": "영등포구의 인구는 2026년 기준 약 37만 명으로, 18개 행정동과 34개 법정동으로 나뉘어 있습니다. 도시의 성격은 크게 세 얼굴로 나타나는데, 여의도는 국회·증권거래소·방송사·대형 증권사가 모인 정치와 금융, 언론의 중심입니다. 문래동과 양평동 일대는 오랜 소규모 철공소와 기계 가공업이 밀집한 서울의 대표 제조업 지구로, 최근에는 예술창작촌으로도 이름을 알리고 있습니다. 영등포역과 타임스퀘어를 낀 원도심은 백화점·재래시장·상가가 뒤섞인 서남권 최대 상업 거점으로 유동 인구가 매우 많습니다. 구목은 은행나무, 구화는 목련, 구조는 청둥오리로 지정되어 한강변 도시의 상징으로 삼고 있습니다. 이처럼 금융 업무지구와 노후 공업지구, 상업 원도심이 한 구 안에 공존하는 점이 영등포만의 뚜렷한 개성입니다.",
+  "coords": {
+    "lat": 37.5264,
+    "lng": 126.8962
+  },
+  "cultural_heritage": [
+    {
+      "description": "2005년부터 매년 4월 여의서로 벚꽃길과 한강공원 일대에서 열리는 서울 대표 봄 축제로, 국회 뒤편 약 1.7킬로미터 벚꽃길을 중심으로 공연과 문화 프로그램이 펼쳐집니다.",
+      "name": "영등포 여의도 봄꽃축제"
+    },
+    {
+      "description": "영등포문화재단이 운영하는 공연·전시 시설로, 지역 예술가의 무대와 시민 문화강좌, 봄꽃축제 등 구의 문화예술 사업을 총괄하는 거점입니다.",
+      "name": "영등포아트홀·영등포문화재단"
+    },
+    {
+      "description": "여의도에 자리한 공영방송 한국방송공사의 본사로, 방송 스튜디오와 KBS 아트홀 등을 갖춰 여의도를 한국 방송 문화의 중심지로 만든 시설입니다.",
+      "name": "KBS 방송국"
+    },
+    {
+      "description": "문래동 예술창작촌과 연계해 운영되는 서울시 창작 지원 공간으로, 입주 작가의 작업실과 공연장, 전시실을 두어 신진 예술가의 창작 활동을 뒷받침합니다.",
+      "name": "문래예술공장"
+    }
+  ],
+  "faq": [
+    {
+      "answer": "음력 이월 여의도 샛강변에서 벌어지던 영등굿의 '영등'과 물가 마을을 뜻하는 '포(浦)'가 합쳐진 이름으로, 한강 하류의 옛 나루 마을에서 비롯되었습니다.",
+      "question": "영등포구라는 이름은 어디서 유래했나요?"
+    },
+    {
+      "answer": "네, 여의도동은 영등포구에서 가장 넓은 동으로 구 전체 면적의 약 34퍼센트를 차지하며 국회·금융가·방송사가 모여 있습니다.",
+      "question": "여의도가 영등포구에 속하나요?"
+    },
+    {
+      "answer": "2026년 기준 인구는 약 37만 명이며 면적은 약 24.56제곱킬로미터로, 18개 행정동과 34개 법정동으로 구성되어 있습니다.",
+      "question": "영등포구의 인구와 면적은 어느 정도인가요?"
+    },
+    {
+      "answer": "문래동의 오래된 철공소 골목에 예술가 공방과 갤러리, 카페가 들어서며 형성된 예술창작 지구로, 산업의 흔적과 현대 예술이 어우러진 골목 명소입니다.",
+      "question": "문래창작촌은 어떤 곳인가요?"
+    },
+    {
+      "answer": "매년 4월 초 여의서로 벚꽃길과 한강공원 일대에서 영등포구와 영등포문화재단이 주관해 열리며, 국회 뒤편 벚꽃길이 중심 무대입니다.",
+      "question": "여의도 봄꽃축제는 언제 열리나요?"
+    },
+    {
+      "answer": "영등포역은 지하철 1호선과 경부선 일반열차가 서고, 여의도역은 5호선과 9호선이 만나는 환승역으로 도심과 강남 방면을 편리하게 연결합니다.",
+      "question": "영등포역과 여의도로 가는 지하철은 무엇인가요?"
+    }
+  ],
+  "geography_nature": "영등포구는 서울 한강 이남 서부에 위치하며, 동쪽으로 동작구, 서쪽으로 양천구, 남서쪽으로 구로구, 북쪽으로는 한강 건너 마포구·용산구와 마주합니다. 면적은 약 24.56제곱킬로미터이고 대부분 낮은 평지로 이루어져 뚜렷한 산지는 거의 없습니다. 북쪽 경계를 한강이 지나고 서쪽에는 안양천, 남쪽에는 도림천이 흘러 세 물길이 구의 골격을 이룹니다. 한강 위에 떠 있는 여의도는 이 구에서 가장 넓은 동으로, 홀로 전체 면적의 약 34퍼센트를 차지합니다. 한강과 안양천이 만나는 하구 저지대에는 밤섬 철새 서식처와 습지가 남아 도심 속 생태 공간으로 보전되고 있습니다. 평탄한 지형과 풍부한 수변은 여의도·안양천 일대에 넓은 강변 공원과 자전거길이 조성되는 바탕이 되었습니다.",
+  "history": "영등포는 본래 경기도 시흥군에 속한 한강 하류의 물가 마을이었으며, 지명은 여의도 샛강에서 성행하던 영등굿 제의에서 유래했습니다. 1936년 4월 시흥군 영등포읍과 북면 일부, 고양군 용강면 일부가 경성부에 편입되면서 한강 이남에서 처음으로 서울에 들어온 지역이 되었습니다. 이 무렵부터 방직·기계 공장이 들어서 1930년대에는 자족적인 신생 공업도시의 기반을 갖추었고, 이후 문래동과 양평동 일대가 서울 대표 제조업 지구로 성장했습니다. 1943년 6월 경성부 영등포구역소가 설치되었고, 1946년 서울시 영등포구로 이름이 바뀌었습니다. 광복 이후 강남·강서·구로·관악·동작·양천 등이 순차적으로 이 구에서 분리되어 나가며 오늘날의 경계로 좁혀졌습니다. 한때 모래섬이던 여의도는 1968년 개발과 함께 국회·방송·금융의 중심으로 탈바꿈해 영등포의 위상을 새롭게 규정했습니다.",
+  "intro": "영등포구는 한강 남쪽 서부에 자리 잡은 자치구로, 국회의사당과 63빌딩, 여의도 금융가가 한데 모여 흔히 '한국의 맨해튼'으로 불리는 곳입니다. 구 이름은 음력 이월 초하루부터 보름까지 여의도 샛강변에서 벌어지던 영등굿의 '영등'과 물가 마을을 뜻하는 '포(浦)'가 합쳐진 데서 비롯되었습니다. 방송사 KBS와 증권·선물거래소, 대형 증권사 본사가 밀집해 정치·금융·언론의 심장부 역할을 동시에 수행합니다. 한편 문래동 철공소 골목에는 예술가 공방과 레트로 카페가 스며들어 산업의 옛 정취와 창작 문화가 공존하는 독특한 풍경을 이룹니다. 경방 영등포공장 터에 들어선 타임스퀘어와 봄마다 벚꽃으로 물드는 여의서로가 상징하듯, 영등포는 근대 공업의 유산 위에 현대 도심의 활력을 겹쳐 놓은 자치구입니다.",
+  "landmarks": [
+    {
+      "description": "1985년 준공된 여의도의 대표 초고층 빌딩으로, 한때 국내 최고 높이를 자랑했으며 고층 전망대와 아쿠아리움, 아트홀 등을 갖춘 랜드마크입니다.",
+      "name": "여의도 63빌딩"
+    },
+    {
+      "description": "1975년 여의도에 준공된 대한민국 입법부의 본거지로, 돔 지붕의 본관과 넓은 잔디광장이 여의도 정치 1번지의 상징 경관을 이룹니다.",
+      "name": "국회의사당"
+    },
+    {
+      "description": "옛 경방 영등포공장·경방필백화점 터에 조성되어 2009년 문을 연 대형 복합몰로, 백화점과 대형마트, 극장, 호텔과 약 200여 개 매장이 모인 서남권 쇼핑 명소입니다.",
+      "name": "타임스퀘어"
+    },
+    {
+      "description": "문래동 철공소 골목에 예술가들의 공방과 갤러리, 개성 있는 카페가 들어서면서 형성된 예술창작 지구로, 산업의 흔적과 현대 미술이 뒤섞인 골목 풍경으로 유명합니다.",
+      "name": "문래창작촌"
+    }
+  ],
+  "nature_rest": [
+    {
+      "description": "과거 아스팔트 광장이던 여의도광장을 1999년 도심 숲으로 바꾼 공원으로, 한국 전통의 숲과 잔디마당, 자연생태 숲을 갖춰 도심 직장인과 시민의 휴식처가 됩니다.",
+      "name": "여의도공원"
+    },
+    {
+      "description": "한강을 끼고 조성된 대표 강변 공원으로, 물빛무대와 수영장, 자전거길과 유람선 선착장을 갖춰 봄 벚꽃과 여름 물놀이로 사시사철 붐빕니다.",
+      "name": "여의도 한강공원"
+    },
+    {
+      "description": "옛 정수장 시설을 재활용해 만든 한강 위 생태공원으로, 콘크리트 구조물과 물·식물이 어우러진 재생 건축의 명소이자 선유교 야경으로 사랑받습니다.",
+      "name": "선유도공원"
+    },
+    {
+      "description": "구의 서쪽과 남쪽을 흐르는 안양천과 도림천을 따라 이어진 수변 산책·자전거길로, 봄이면 벚꽃과 유채가 피어 주민들의 대표적인 근린 휴식 공간이 됩니다.",
+      "name": "안양천·도림천 산책로"
+    },
+    {
+      "description": "옛 OB맥주 영등포공장 터에 조성된 근린공원으로, 공장에서 쓰던 담금솥을 상징물로 남겨 지역 산업의 역사를 기억하게 하는 도심 쉼터입니다.",
+      "name": "영등포공원"
+    }
+  ],
+  "org_slug": "kr-seoul-yeongdeungpo",
+  "sido": "서울특별시",
+  "sigungu": "영등포구",
+  "symbols": {
+    "bird": "청둥오리",
+    "flower": "목련",
+    "tree": "은행나무"
+  },
+  "transport": "영등포구는 서울 서남권 철도 교통의 요충지로, 경부선 무궁화·ITX 등 일반 열차가 서는 영등포역이 도심과 지방을 잇는 관문 역할을 합니다. 지하철 1호선은 대방·신길·영등포역을 지나고, 2호선은 문래·영등포구청·당산역을 거칩니다. 5호선은 양평·영등포구청·영등포시장·신길·여의도·여의나루역을 이으며 5호선과 9호선이 만나는 여의도역은 환승 거점입니다. 9호선은 선유도·당산·국회의사당·여의도·샛강역을 지나 강남 방면 급행으로 연결되고, 7호선 대림·신풍역, 경전철 신림선 샛강역도 구를 지납니다. 당산역과 선유도역 사이 당산철교로 2호선이 한강을 건너고, 강변북로·올림픽대로·서부간선도로와 여의도의 여러 한강 다리가 도로망의 축을 이룹니다."
+}
+  </script>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="eyebrow">서울특별시</p>
-      <h1>영등포구</h1>
-    </header>
-    <div class="content">
-      <section id="intro">
+<div id="hts-yeongdeungpo" class="hts-root">
+  <script type="application/json" id="region-data">{"sido":"서울특별시","sigungu":"영등포구","org_slug":"kr-seoul-yeongdeungpo"}</script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+    #hts-yeongdeungpo{
+      --hts-navy:#36454F;
+      --hts-navy-2:#2b3841;
+      --hts-navy-3:#222d34;
+      --hts-gold:#FFD700;
+      --hts-gold-dim:#c9a600;
+      --hts-up:#e5443b;
+      --hts-down:#2f74d0;
+      --hts-line:#4a5a66;
+      --hts-line-strong:#5f7382;
+      --hts-text:#e8edf1;
+      --hts-text-dim:#9fb1bd;
+      --hts-panel:#31404a;
+      --hts-panel-2:#2a363f;
+      --hts-serif:'Times New Roman', Georgia, serif;
+      --hts-sans:'Noto Sans KR','Noto Sans',system-ui,-apple-system,sans-serif;
+      font-family:var(--hts-sans);
+      color:var(--hts-text);
+      background:var(--hts-navy-3);
+      border:2px solid var(--hts-line-strong);
+      display:block;
+      width:100%;
+      box-sizing:border-box;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    #hts-yeongdeungpo *{box-sizing:border-box;}
+    #hts-yeongdeungpo .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+    /* ===== Top ticker / status bar ===== */
+    #hts-yeongdeungpo .hts-topbar{
+      display:flex;align-items:stretch;justify-content:space-between;
+      background:var(--hts-navy);border-bottom:2px solid var(--hts-gold);
+      min-height:46px;overflow:hidden;
+    }
+    #hts-yeongdeungpo .hts-brand{
+      display:flex;align-items:center;gap:10px;padding:6px 14px;
+      border-right:2px solid var(--hts-line);white-space:nowrap;flex:0 0 auto;
+    }
+    #hts-yeongdeungpo .hts-brand .mark{
+      width:26px;height:26px;border:2px solid var(--hts-gold);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--hts-gold);font-family:var(--hts-serif);font-weight:700;font-size:15px;
+    }
+    #hts-yeongdeungpo .hts-brand .name{font-family:var(--hts-serif);font-size:16px;letter-spacing:.5px;color:#fff;}
+    #hts-yeongdeungpo .hts-brand .name em{font-style:normal;color:var(--hts-gold);}
+    #hts-yeongdeungpo .hts-brand .code{font-size:11px;color:var(--hts-text-dim);letter-spacing:1px;}
+
+    #hts-yeongdeungpo .hts-ticker{
+      flex:1 1 auto;overflow:hidden;position:relative;display:flex;align-items:center;
+      border-right:2px solid var(--hts-line);
+    }
+    #hts-yeongdeungpo .hts-ticker-track{
+      display:inline-flex;align-items:center;gap:26px;white-space:nowrap;
+      padding-left:100%;animation:hts-marquee 34s linear infinite;
+      font-size:12.5px;
+    }
+    #hts-yeongdeungpo .hts-ticker:hover .hts-ticker-track{animation-play-state:paused;}
+    #hts-yeongdeungpo .tk{display:inline-flex;align-items:center;gap:7px;}
+    #hts-yeongdeungpo .tk b{font-weight:500;color:#fff;}
+    #hts-yeongdeungpo .tk .up{color:var(--hts-up);}
+    #hts-yeongdeungpo .tk .down{color:var(--hts-down);}
+    #hts-yeongdeungpo .tk .flat{color:var(--hts-gold);}
+    @keyframes hts-marquee{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+
+    #hts-yeongdeungpo .hts-clock{
+      display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+      padding:4px 14px;flex:0 0 auto;font-variant-numeric:tabular-nums;
+    }
+    #hts-yeongdeungpo .hts-clock .t{font-family:var(--hts-serif);font-size:17px;color:var(--hts-gold);letter-spacing:1px;}
+    #hts-yeongdeungpo .hts-clock .d{font-size:10.5px;color:var(--hts-text-dim);}
+
+    /* ===== Workspace grid ===== */
+    #hts-yeongdeungpo .hts-workspace{
+      display:grid;
+      grid-template-columns:210px 1fr;
+      grid-template-rows:auto auto;
+      gap:2px;background:var(--hts-line);
+      padding:2px;
+    }
+    #hts-yeongdeungpo .panel{
+      background:var(--hts-panel);border:2px solid var(--hts-line);
+      display:flex;flex-direction:column;min-width:0;
+    }
+    #hts-yeongdeungpo .panel-head{
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+      background:var(--hts-navy-2);border-bottom:2px solid var(--hts-line-strong);
+      padding:6px 10px;min-height:34px;
+    }
+    #hts-yeongdeungpo .panel-head .pt{
+      display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;letter-spacing:.3px;color:#fff;
+    }
+    #hts-yeongdeungpo .panel-head .pt i{color:var(--hts-gold);font-size:14px;}
+    #hts-yeongdeungpo .panel-head .pn{font-size:10px;color:var(--hts-text-dim);letter-spacing:1px;}
+
+    /* watchlist (left) */
+    #hts-yeongdeungpo .hts-watch{grid-row:1 / span 2;}
+    #hts-yeongdeungpo .watch-body{overflow:auto;max-height:640px;}
+    #hts-yeongdeungpo .watch-hint{
+      font-size:10.5px;color:var(--hts-text-dim);padding:7px 10px;
+      border-bottom:1px solid var(--hts-line);letter-spacing:.2px;
+    }
+    #hts-yeongdeungpo .wl{
+      width:100%;display:flex;align-items:center;justify-content:space-between;gap:6px;
+      background:transparent;border:none;border-bottom:1px solid var(--hts-line);
+      border-left:3px solid transparent;
+      color:var(--hts-text);text-align:left;cursor:pointer;
+      padding:8px 10px;font-family:var(--hts-sans);font-size:12px;transition:background .12s;
+    }
+    #hts-yeongdeungpo .wl:hover{background:var(--hts-navy-2);}
+    #hts-yeongdeungpo .wl.active{background:var(--hts-navy-3);border-left-color:var(--hts-gold);}
+    #hts-yeongdeungpo .wl .wl-l{display:flex;flex-direction:column;gap:1px;min-width:0;}
+    #hts-yeongdeungpo .wl .wl-nm{font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    #hts-yeongdeungpo .wl .wl-cd{font-size:9.5px;color:var(--hts-text-dim);letter-spacing:.6px;}
+    #hts-yeongdeungpo .wl .wl-r{text-align:right;font-variant-numeric:tabular-nums;flex:0 0 auto;}
+    #hts-yeongdeungpo .wl .wl-px{font-weight:500;}
+    #hts-yeongdeungpo .wl .wl-ch{font-size:10px;}
+    #hts-yeongdeungpo .wl.active .wl-nm{color:var(--hts-gold);}
+
+    /* main quote panel (top right) */
+    #hts-yeongdeungpo .hts-main .panel-body{padding:0;}
+    #hts-yeongdeungpo .quote-hero{
+      display:flex;flex-wrap:wrap;align-items:flex-end;gap:6px 22px;
+      padding:12px 16px;border-bottom:2px solid var(--hts-line);background:var(--hts-navy-2);
+    }
+    #hts-yeongdeungpo .quote-hero .qh-name{font-family:var(--hts-serif);font-size:22px;color:#fff;letter-spacing:.5px;}
+    #hts-yeongdeungpo .quote-hero .qh-code{font-size:11px;color:var(--hts-text-dim);letter-spacing:1.5px;align-self:center;}
+    #hts-yeongdeungpo .quote-hero .qh-px{margin-left:auto;text-align:right;}
+    #hts-yeongdeungpo .quote-hero .qh-px .big{font-family:var(--hts-serif);font-size:26px;color:var(--hts-gold);font-variant-numeric:tabular-nums;}
+    #hts-yeongdeungpo .quote-hero .qh-px .chg{font-size:12px;color:var(--hts-up);letter-spacing:.5px;}
+
+    #hts-yeongdeungpo .quote-stats{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--hts-line);
+    }
+    #hts-yeongdeungpo .qs{background:var(--hts-panel-2);padding:8px 12px;}
+    #hts-yeongdeungpo .qs .k{font-size:10px;color:var(--hts-text-dim);letter-spacing:.4px;}
+    #hts-yeongdeungpo .qs .v{font-size:13px;color:#fff;font-family:var(--hts-serif);font-variant-numeric:tabular-nums;}
+
+    /* content reader panel (bottom right) */
+    #hts-yeongdeungpo .hts-detail{grid-column:2;}
+    #hts-yeongdeungpo .detail-tabs{
+      display:flex;flex-wrap:wrap;gap:0;background:var(--hts-navy-3);
+      border-bottom:2px solid var(--hts-line-strong);
+    }
+    #hts-yeongdeungpo .dtab{
+      background:transparent;border:none;border-right:1px solid var(--hts-line);
+      border-bottom:3px solid transparent;
+      color:var(--hts-text-dim);cursor:pointer;padding:8px 13px;
+      font-family:var(--hts-sans);font-size:11.5px;letter-spacing:.2px;white-space:nowrap;transition:.12s;
+    }
+    #hts-yeongdeungpo .dtab:hover{color:#fff;background:var(--hts-navy-2);}
+    #hts-yeongdeungpo .dtab.active{color:var(--hts-gold);background:var(--hts-navy-2);border-bottom-color:var(--hts-gold);font-weight:500;}
+    #hts-yeongdeungpo .dtab i{font-size:13px;margin-right:5px;vertical-align:-2px;}
+
+    #hts-yeongdeungpo .detail-body{
+      padding:2px 2px 2px;background:var(--hts-line);
+      display:grid;grid-template-columns:1fr;gap:2px;
+    }
+
+    /* ===== CONTENT (the injected 9 sections) ===== */
+    #hts-yeongdeungpo .content-wrap{background:var(--hts-panel-2);padding:4px 0;}
+    #hts-yeongdeungpo .content-wrap section{
+      padding:16px 20px;border-bottom:1px solid var(--hts-line);
+      scroll-margin-top:8px;
+    }
+    #hts-yeongdeungpo .content-wrap section:target{
+      background:var(--hts-navy-2);border-left:3px solid var(--hts-gold);
+    }
+    #hts-yeongdeungpo .content-wrap h2{
+      font-family:var(--hts-serif);font-size:17px;color:var(--hts-gold);
+      margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--hts-line);
+      display:flex;align-items:center;gap:9px;letter-spacing:.4px;
+    }
+    #hts-yeongdeungpo .content-wrap h2::before{
+      content:'▚';color:var(--hts-line-strong);font-size:13px;
+    }
+    #hts-yeongdeungpo .content-wrap h3{font-size:13.5px;color:#fff;margin:14px 0 6px;font-weight:500;}
+    #hts-yeongdeungpo .content-wrap p{margin:0 0 10px;color:var(--hts-text);font-size:13.5px;line-height:1.75;}
+    #hts-yeongdeungpo .content-wrap a{color:var(--hts-gold);text-decoration:none;border-bottom:1px dotted var(--hts-gold-dim);}
+    #hts-yeongdeungpo .content-wrap a:hover{color:#fff;border-bottom-color:#fff;}
+    #hts-yeongdeungpo .content-wrap ul{margin:0 0 10px;padding-left:20px;}
+    #hts-yeongdeungpo .content-wrap li{margin:3px 0;font-size:13px;color:var(--hts-text);}
+
+    /* facts as a data board */
+    #hts-yeongdeungpo .content-wrap .facts{list-style:none;padding:0;margin:6px 0 10px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;background:var(--hts-line);border:1px solid var(--hts-line);}
+    #hts-yeongdeungpo .content-wrap .facts li{
+      background:var(--hts-panel);margin:0;padding:8px 11px;font-size:12px;
+      display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--hts-gold-dim);
+    }
+
+    /* symbols board */
+    #hts-yeongdeungpo .content-wrap .symbols{
+      display:flex;flex-wrap:wrap;gap:2px;margin:6px 0 10px;padding:0;list-style:none;background:var(--hts-line);border:1px solid var(--hts-line);
+    }
+    #hts-yeongdeungpo .content-wrap .symbols li{
+      background:var(--hts-panel);padding:8px 12px;font-size:12px;flex:1 1 130px;
+      border-top:2px solid var(--hts-gold);
+    }
+
+    /* faq as order-book style expandables */
+    #hts-yeongdeungpo .content-wrap .faq{margin:6px 0;}
+    #hts-yeongdeungpo .content-wrap .faq details{
+      border:1px solid var(--hts-line);border-left:3px solid var(--hts-line-strong);
+      margin-bottom:2px;background:var(--hts-panel);
+    }
+    #hts-yeongdeungpo .content-wrap .faq details[open]{border-left-color:var(--hts-gold);}
+    #hts-yeongdeungpo .content-wrap .faq summary{
+      cursor:pointer;padding:9px 12px;font-size:12.5px;font-weight:500;color:#fff;
+      list-style:none;display:flex;align-items:center;gap:8px;
+    }
+    #hts-yeongdeungpo .content-wrap .faq summary::-webkit-details-marker{display:none;}
+    #hts-yeongdeungpo .content-wrap .faq summary::before{content:'＋';color:var(--hts-gold);font-weight:700;}
+    #hts-yeongdeungpo .content-wrap .faq details[open] summary::before{content:'－';}
+    #hts-yeongdeungpo .content-wrap .faq details p{padding:0 12px 11px;margin:0;color:var(--hts-text-dim);font-size:12.5px;}
+
+    /* ===== depth / news mini panels appended to detail ===== */
+    #hts-yeongdeungpo .mini-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+    #hts-yeongdeungpo .mini{background:var(--hts-panel);border-top:2px solid var(--hts-line-strong);}
+    #hts-yeongdeungpo .mini-h{font-size:10.5px;letter-spacing:.5px;color:var(--hts-gold);padding:7px 11px;border-bottom:1px solid var(--hts-line);text-transform:uppercase;}
+    #hts-yeongdeungpo .mini-b{padding:6px 11px;}
+    #hts-yeongdeungpo .depth-row{display:flex;align-items:center;gap:8px;font-size:11px;padding:3px 0;font-variant-numeric:tabular-nums;}
+    #hts-yeongdeungpo .depth-row .bar{height:9px;flex:0 0 auto;}
+    #hts-yeongdeungpo .depth-row .bar.buy{background:rgba(47,116,208,.55);}
+    #hts-yeongdeungpo .depth-row .bar.sell{background:rgba(229,68,59,.55);}
+    #hts-yeongdeungpo .depth-row .lbl{color:var(--hts-text-dim);white-space:nowrap;}
+    #hts-yeongdeungpo .news-item{font-size:11.5px;padding:5px 0;border-bottom:1px solid var(--hts-line);display:flex;gap:7px;}
+    #hts-yeongdeungpo .news-item:last-child{border-bottom:none;}
+    #hts-yeongdeungpo .news-item .tag{color:var(--hts-gold);flex:0 0 auto;font-variant-numeric:tabular-nums;}
+    #hts-yeongdeungpo .news-item span{color:var(--hts-text-dim);}
+
+    /* status footer */
+    #hts-yeongdeungpo .hts-foot{
+      display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;
+      background:var(--hts-navy);border-top:2px solid var(--hts-gold);
+      padding:6px 14px;font-size:10.5px;color:var(--hts-text-dim);letter-spacing:.3px;
+    }
+    #hts-yeongdeungpo .hts-foot .dot{width:7px;height:7px;background:var(--hts-up);border-radius:50%;display:inline-block;animation:hts-blink 1.4s infinite;}
+    #hts-yeongdeungpo .hts-foot b{color:var(--hts-gold);font-weight:500;}
+    @keyframes hts-blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+    /* JS-on affordance: hide the plain nav that JS replaces with tabs behavior; but keep sections visible always */
+    #hts-yeongdeungpo .nojs-note{display:none;}
+
+    @media (max-width:720px){
+      #hts-yeongdeungpo .hts-workspace{grid-template-columns:1fr;}
+      #hts-yeongdeungpo .hts-watch{grid-row:auto;}
+      #hts-yeongdeungpo .watch-body{max-height:200px;}
+      #hts-yeongdeungpo .hts-detail{grid-column:1;}
+      #hts-yeongdeungpo .quote-stats{grid-template-columns:repeat(2,1fr);}
+      #hts-yeongdeungpo .mini-row{grid-template-columns:1fr;}
+      #hts-yeongdeungpo .hts-clock .d{display:none;}
+    }
+  </style>
+
+  <p class="sr-only">서울특별시 영등포구 지역 정보를 증권 HTS(홈트레이딩시스템) 스타일의 다중 패널 대시보드로 구성한 페이지입니다. 종목처럼 배열된 지역 지표를 선택하면 우측 패널이 연동되며, 아래에는 지역 소개·역사·지리·명소·교통 등 실제 콘텐츠가 이어집니다.</p>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="hts-topbar">
+    <div class="hts-brand">
+      <span class="mark">Y</span>
+      <span>
+        <span class="name">영등포 <em>HTS</em></span><br>
+        <span class="code">kr-seoul-yeongdeungpo</span>
+      </span>
+    </div>
+    <div class="hts-ticker" aria-hidden="true">
+      <div class="hts-ticker-track">
+        <span class="tk"><b>여의도 KOSPI관</b> <span class="up">▲ 2,589.40 +1.24%</span></span>
+        <span class="tk"><b>63스퀘어</b> <span class="up">▲ 249.0m +0.00%</span></span>
+        <span class="tk"><b>영등포 전통시장</b> <span class="down">▼ 활황 -0.31%</span></span>
+        <span class="tk"><b>한강 밤섬 생태</b> <span class="flat">● 철새 관측</span></span>
+        <span class="tk"><b>타임스퀘어</b> <span class="up">▲ 유동인구 +3.02%</span></span>
+        <span class="tk"><b>문래창작촌</b> <span class="up">▲ 예술 +2.15%</span></span>
+        <span class="tk"><b>국회의사당</b> <span class="flat">● 개장</span></span>
+        <span class="tk"><b>선유도공원</b> <span class="up">▲ 정수장 리버스 +0.88%</span></span>
+      </div>
+    </div>
+    <div class="hts-clock">
+      <span class="t" id="hts-clock-t">09:00:00</span>
+      <span class="d" id="hts-clock-d">장중 · 서울특별시 영등포구</span>
+    </div>
+  </div>
+
+  <!-- ============ WORKSPACE ============ -->
+  <div class="hts-workspace">
+
+    <!-- LEFT: watchlist (sections as tradable symbols) -->
+    <div class="panel hts-watch">
+      <div class="panel-head">
+        <span class="pt"><i class="ti ti-list-search" aria-hidden="true"></i>관심 종목</span>
+        <span class="pn">WATCH</span>
+      </div>
+      <div class="watch-hint">패널 선택 시 우측 시세·상세가 연동됩니다</div>
+      <div class="watch-body" id="hts-watchlist" role="tablist" aria-label="영등포 지역 지표 관심종목">
+        <!-- populated by JS from section list; static fallback below is replaced -->
+        <noscript><div class="watch-hint">아래 상세 패널에서 전체 정보를 확인하세요.</div></noscript>
+      </div>
+    </div>
+
+    <!-- TOP RIGHT: main quote -->
+    <div class="panel hts-main">
+      <div class="panel-head">
+        <span class="pt"><i class="ti ti-chart-candle" aria-hidden="true"></i>현재가 · 시세</span>
+        <span class="pn" id="hts-main-code">YDP-INTRO</span>
+      </div>
+      <div class="panel-body">
+        <div class="quote-hero">
+          <span class="qh-name" id="hts-q-name">영등포구</span>
+          <span class="qh-code" id="hts-q-tag">종합지표</span>
+          <span class="qh-px">
+            <span class="big" id="hts-q-index">1,441.90</span><br>
+            <span class="chg" id="hts-q-chg">▲ 한강·금융·산업 복합상장</span>
+          </span>
+        </div>
+        <div class="quote-stats" id="hts-q-stats" aria-hidden="true">
+          <div class="qs"><div class="k">시가 · 개청</div><div class="v">1943</div></div>
+          <div class="qs"><div class="k">거래대금 · 인구</div><div class="v">37만+</div></div>
+          <div class="qs"><div class="k">면적 · 상장주식</div><div class="v">24.6㎢</div></div>
+          <div class="qs"><div class="k">행정동 · 섹터</div><div class="v">18개동</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM RIGHT: detail + linked mini panels -->
+    <div class="panel hts-detail">
+      <div class="panel-head">
+        <span class="pt"><i class="ti ti-clipboard-text" aria-hidden="true"></i>종목 상세 · 리서치</span>
+        <span class="pn">RESEARCH TERMINAL</span>
+      </div>
+      <div class="detail-tabs" id="hts-tabs" aria-hidden="true"></div>
+      <div class="detail-body">
+
+        <div class="content-wrap" id="hts-content">
+                <section id="intro">
         <h2>지역 소개</h2>
         <p>영등포구는 한강 남쪽 서부에 자리 잡은 자치구로, 국회의사당과 63빌딩, 여의도 금융가가 한데 모여 흔히 &#x27;한국의 맨해튼&#x27;으로 불리는 곳입니다. 구 이름은 음력 이월 초하루부터 보름까지 여의도 샛강변에서 벌어지던 영등굿의 &#x27;영등&#x27;과 물가 마을을 뜻하는 &#x27;포(浦)&#x27;가 합쳐진 데서 비롯되었습니다. 방송사 KBS와 증권·선물거래소, 대형 증권사 본사가 밀집해 정치·금융·언론의 심장부 역할을 동시에 수행합니다. 한편 문래동 철공소 골목에는 예술가 공방과 레트로 카페가 스며들어 산업의 옛 정취와 창작 문화가 공존하는 독특한 풍경을 이룹니다. 경방 영등포공장 터에 들어선 타임스퀘어와 봄마다 벚꽃으로 물드는 여의서로가 상징하듯, 영등포는 근대 공업의 유산 위에 현대 도심의 활력을 겹쳐 놓은 자치구입니다.</p>
       </section>
@@ -254,10 +673,163 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
           <li><a href="https://www.ydp.go.kr/www/contents.do?key=2882" rel="noopener">영등포구청 일반현황·인구통계</a> (조회 2026-07-08)</li>
         </ul>
       </section>
+        </div>
+
+        <div class="mini-row" aria-hidden="true">
+          <div class="mini">
+            <div class="mini-h">호가창 · 유동인구 체결강도</div>
+            <div class="mini-b" id="hts-depth"></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h">공시 · 지역 이슈</div>
+            <div class="mini-b">
+              <div class="news-item"><span class="tag">09:01</span><span>여의도 금융투자 클러스터, 자본시장 거래 활발</span></div>
+              <div class="news-item"><span class="tag">09:14</span><span>타임스퀘어·경방필 상권 유동인구 상한가</span></div>
+              <div class="news-item"><span class="tag">09:33</span><span>문래동 기계금속단지, 창작촌으로 리밸런싱</span></div>
+              <div class="news-item"><span class="tag">09:47</span><span>선유도·밤섬 생태 섹터 방어주 강세</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <footer>
-      <p>이 페이지는 공개 자료를 바탕으로 작성된 영등포구 지역 정보 페이지입니다.</p>
-    </footer>
-  </main>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="hts-foot">
+    <span><span class="dot" aria-hidden="true"></span> 실시간 연동</span>
+    <span>단말: <b>영등포 HTS v1</b></span>
+    <span>섹터: <b>금융·한강·산업·문화</b></span>
+    <span id="hts-foot-sel">선택: 종합지표</span>
+    <span style="margin-left:auto;">https://kr-seoul-yeongdeungpo.github.io/</span>
+  </div>
+
+  <script>
+  (function(){
+    var root=document.getElementById('hts-yeongdeungpo');
+    if(!root) return;
+
+    /* live clock */
+    var ct=document.getElementById('hts-clock-t');
+    function tick(){
+      var d=new Date();
+      var p=function(n){return String(n).padStart(2,'0');};
+      if(ct) ct.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());
+    }
+    tick(); setInterval(tick,1000);
+
+    /* Progressive enhancement: read the injected sections and wire them
+       as a linked HTS workspace. Sections always remain visible (no display:none). */
+    var content=document.getElementById('hts-content');
+    var sections=content?Array.prototype.slice.call(content.querySelectorAll('section[id]')):[];
+
+    var meta={
+      intro:{label:'종합지표', tag:'YDP·MAIN', icon:'ti-building-skyscraper', idx:'1,441.90', chg:'▲ 한강·금융·산업 복합상장'},
+      facts:{label:'기초통계', tag:'FACTS', icon:'ti-database', idx:'FACT.00', chg:'● 데이터 보드'},
+      history:{label:'연혁·역사', tag:'HISTORY', icon:'ti-history', idx:'1943↗', chg:'▲ 장기 우상향'},
+      geography:{label:'지리·위치', tag:'GEO', icon:'ti-map-2', idx:'37.52N', chg:'● 한강 남안'},
+      geography_nature:{label:'지리·자연', tag:'GEO', icon:'ti-map-2', idx:'37.52N', chg:'● 한강 남안'},
+      characteristics:{label:'지역특성', tag:'PROFILE', icon:'ti-chart-dots', idx:'FIN·IND', chg:'▲ 섹터 다각화'},
+      landmarks:{label:'주요명소', tag:'SPOT', icon:'ti-map-pin', idx:'63↗249m', chg:'▲ 관광 거래활발'},
+      heritage:{label:'문화유산', tag:'HERI', icon:'ti-building-monument', idx:'HERI.KR', chg:'● 보존 우량'},
+      nature:{label:'자연·휴식', tag:'NATURE', icon:'ti-tree', idx:'선유도', chg:'▲ 생태 방어주'},
+      transport:{label:'교통', tag:'ACCESS', icon:'ti-train', idx:'HUB.9', chg:'▲ 환승 상한가'},
+      symbols:{label:'구 상징', tag:'SYMBOL', icon:'ti-award', idx:'SYM.YDP', chg:'● 정체성'},
+      faq:{label:'자주묻는질문', tag:'FAQ', icon:'ti-help-circle', idx:'Q&A', chg:'● 안내'},
+      links:{label:'관련링크', tag:'LINKS', icon:'ti-external-link', idx:'REF', chg:'● 외부'},
+      sources:{label:'출처', tag:'SOURCE', icon:'ti-license', idx:'SRC', chg:'● 근거'}
+    };
+    function m(id){return meta[id]||{label:id,tag:id.toUpperCase(),icon:'ti-point',idx:'--',chg:'●'};}
+
+    var wl=document.getElementById('hts-watchlist');
+    var tabs=document.getElementById('hts-tabs');
+    var qName=document.getElementById('hts-q-name');
+    var qTag=document.getElementById('hts-q-tag');
+    var qIdx=document.getElementById('hts-q-index');
+    var qChg=document.getElementById('hts-q-chg');
+    var mainCode=document.getElementById('hts-main-code');
+    var footSel=document.getElementById('hts-foot-sel');
+
+    var upDown=['up','down','flat'];
+    function fauxChange(seed){
+      var v=((seed*37)%9)-3; /* -3..+5 */
+      var pct=(Math.abs(v)*0.31+0.12).toFixed(2);
+      if(v>0) return {cls:'wl-ch',c:'#e5443b',t:'▲ '+pct+'%'};
+      if(v<0) return {cls:'wl-ch',c:'#2f74d0',t:'▼ '+pct+'%'};
+      return {cls:'wl-ch',c:'#FFD700',t:'● 0.00%'};
+    }
+
+    function select(id){
+      var info=m(id);
+      sections.forEach(function(s){s.style.background='';});
+      var target=document.getElementById(id);
+      /* highlight linked section without hiding others */
+      if(target){
+        target.style.background='rgba(43,56,65,.9)';
+        target.style.borderLeft='3px solid #FFD700';
+        /* scroll research panel to it */
+        target.scrollIntoView({behavior:'smooth',block:'nearest'});
+      }
+      if(qName) qName.textContent=info.label;
+      if(qTag) qTag.textContent=info.tag;
+      if(qIdx) qIdx.textContent=info.idx;
+      if(qChg){qChg.textContent=info.chg; qChg.style.color= info.chg.indexOf('▲')>-1?'#e5443b':(info.chg.indexOf('▼')>-1?'#2f74d0':'#FFD700');}
+      if(mainCode) mainCode.textContent='YDP-'+info.tag;
+      if(footSel) footSel.textContent='선택: '+info.label;
+
+      Array.prototype.forEach.call(wl.children,function(b){
+        if(b.dataset&&b.dataset.sec===id){b.classList.add('active');b.setAttribute('aria-selected','true');}
+        else if(b.classList){b.classList.remove('active');b.setAttribute&&b.setAttribute('aria-selected','false');}
+      });
+      Array.prototype.forEach.call(tabs.children,function(b){
+        b.classList.toggle('active', b.dataset&&b.dataset.sec===id);
+      });
+    }
+
+    /* build watchlist + tabs from real sections */
+    sections.forEach(function(s,i){
+      var id=s.id, info=m(id), ch=fauxChange(i+3);
+
+      var btn=document.createElement('button');
+      btn.className='wl'; btn.dataset.sec=id; btn.type='button';
+      btn.setAttribute('role','tab');
+      btn.innerHTML='<span class="wl-l"><span class="wl-nm">'+info.label+'</span>'+
+                    '<span class="wl-cd">'+info.tag+'</span></span>'+
+                    '<span class="wl-r"><span class="wl-px">'+info.idx+'</span><br>'+
+                    '<span class="'+ch.cls+'" style="color:'+ch.c+'">'+ch.t+'</span></span>';
+      btn.addEventListener('click',function(){select(id);});
+      wl.appendChild(btn);
+
+      var tb=document.createElement('button');
+      tb.className='dtab'; tb.dataset.sec=id; tb.type='button';
+      tb.innerHTML='<i class="ti '+info.icon+'" aria-hidden="true"></i>'+info.label;
+      tb.addEventListener('click',function(){select(id);});
+      tabs.appendChild(tb);
+    });
+
+    /* faux order-book depth ladder (decorative, linked to intro sizes) */
+    var depth=document.getElementById('hts-depth');
+    if(depth){
+      var rows=[
+        {s:'sell',lbl:'국회의사당',v:78},{s:'sell',lbl:'여의도공원',v:64},
+        {s:'sell',lbl:'타임스퀘어',v:92},{s:'buy',lbl:'영등포시장',v:71},
+        {s:'buy',lbl:'문래창작촌',v:55},{s:'buy',lbl:'선유도공원',v:48}
+      ];
+      rows.forEach(function(r){
+        var d=document.createElement('div');
+        d.className='depth-row';
+        var side=r.s==='buy'?'매수':'매도';
+        d.innerHTML='<span class="lbl" style="width:70px;color:'+(r.s==='buy'?'#7fa9e0':'#e59089')+'">'+side+' '+r.lbl+'</span>'+
+                    '<span class="bar '+r.s+'" style="width:'+r.v+'px"></span>'+
+                    '<span class="lbl">'+r.v+'</span>';
+        depth.appendChild(d);
+      });
+    }
+
+    /* default selection = first section (intro) */
+    if(sections.length) select(sections[0].id);
+  })();
+  </script>
+</div>
 </body>
 </html>
