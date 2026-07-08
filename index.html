@@ -271,6 +271,42 @@ body { padding-top: var(--cg-strip-h); }
 .cg-colophon-note { margin: 4px 0 0; color: #9a9aa8; }
 @media (max-width: 640px) { .cg-strip-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cg-skip { transition: none; } }
+
+/* ---- Mobile reading view (touch / small screens) ------------------------------------- */
+/* The immersive per-구 template is desktop-only. On touch devices and narrow screens the
+   .cg-read view is shown instead — it uses only safe, high-contrast CSS so text can never
+   go invisible on iOS Safari (no background-clip:text, backdrop-filter, 100vh, :hover-gated
+   reveals, or mix-blend-mode). Fully namespaced + generator-controlled. */
+.cg-read { display: none; }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  /* Neutralise immersive templates that lock scrolling / lock the viewport on <body>. */
+  html, body { overflow-x: hidden !important; overflow-y: auto !important; height: auto !important;
+    min-height: 0 !important; position: static !important; touch-action: auto !important; background: #ffffff !important; }
+  .cg-immersive { display: none !important; }
+  .cg-read { display: block; }
+}
+.cg-read { max-width: 720px; margin: 0 auto; padding: 20px 18px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #17171f; background: #ffffff; line-height: 1.75; -webkit-text-size-adjust: 100%; }
+.cg-read * { max-width: 100%; box-sizing: border-box; }
+.cg-read-head { padding: 8px 0 16px; border-bottom: 3px solid var(--cg-ra, #2d5bff); margin-bottom: 20px; }
+.cg-read-eyebrow { margin: 0 0 4px; color: var(--cg-rd, #333); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.cg-read-head h1 { margin: 0; font-size: clamp(30px, 8vw, 40px); line-height: 1.15; color: #14141c; font-weight: 800; }
+.cg-read h2 { font-size: 20px; margin: 30px 0 10px; padding-left: 11px; color: #14141c; font-weight: 700;
+  border-left: 5px solid var(--cg-ra, #2d5bff); }
+.cg-read p { margin: 0 0 12px; font-size: 17px; color: #23232d; }
+.cg-read section { margin: 0; }
+.cg-read ul { margin: 8px 0 0; padding-left: 20px; }
+.cg-read li { margin: 8px 0; font-size: 16px; color: #23232d; }
+.cg-read li strong { color: #111119; font-weight: 700; }
+.cg-read .facts, .cg-read .symbols { list-style: none; padding: 14px 16px; margin: 8px 0 0;
+  background: #f5f6fa; border: 1px solid #e6e8f0; border-radius: 12px; }
+.cg-read .faq details { border: 1px solid #e6e8f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: #fbfbfd; }
+.cg-read .faq summary { cursor: pointer; font-weight: 700; font-size: 16px; color: #14141c; }
+.cg-read .faq details p { margin: 8px 0 2px; color: #44454f; }
+.cg-read a { color: #1a46d8; word-break: break-word; }
+.cg-read .sources { font-size: 14px; color: #55565f; }
+.cg-read .sources a { color: #3a5bd0; }
 </style>
 </head>
 <body>
@@ -279,6 +315,7 @@ body { padding-top: var(--cg-strip-h); }
     <span class="cg-ad">AD</span><span class="cg-strip-label">후원 파트너</span><span class="cg-strip-list"><a class="cg-strip-item" href="https://ikoffices.com" rel="sponsored noopener" target="_blank">일광오피스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://mobidicsaju.com" rel="sponsored noopener" target="_blank">모비딕 사주</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://www.foodskorea.com/" rel="sponsored noopener" target="_blank">전국팔도 식품도감</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://myflowmakers.com" rel="sponsored noopener" target="_blank">마이플로우메이커스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonlijispace.com" rel="sponsored noopener" target="_blank">연리지 인테리어</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonliji.io" rel="sponsored noopener" target="_blank">주식회사 연리지</a><span class="cg-strip-dot" aria-hidden="true">·</span><span class="cg-strip-item cg-strip-text">세무·법률 자문</span></span>
   </aside>
   <div id="cg-main" tabindex="-1"></div>
+  <div class="cg-immersive">
 <div id="hts-yeongdeungpo" class="hts-root">
 
   <style>
@@ -892,6 +929,131 @@ body { padding-top: var(--cg-strip-h); }
   })();
   </script>
 </div>
+  </div>
+  <main class="cg-read" id="cg-read" role="main" lang="ko" style="--cg-ra:#2bab89;--cg-ra2:#39a3d0;--cg-rd:#195746">
+    <header class="cg-read-head">
+      <p class="cg-read-eyebrow">서울특별시</p>
+      <h1>영등포구</h1>
+    </header>
+    <div class="cg-read-body">
+      <section id="r-intro">
+        <h2>지역 소개</h2>
+        <p>영등포구는 한강 남쪽 서부에 자리 잡은 자치구로, 국회의사당과 63빌딩, 여의도 금융가가 한데 모여 흔히 &#x27;한국의 맨해튼&#x27;으로 불리는 곳입니다. 구 이름은 음력 이월 초하루부터 보름까지 여의도 샛강변에서 벌어지던 영등굿의 &#x27;영등&#x27;과 물가 마을을 뜻하는 &#x27;포(浦)&#x27;가 합쳐진 데서 비롯되었습니다. 방송사 KBS와 증권·선물거래소, 대형 증권사 본사가 밀집해 정치·금융·언론의 심장부 역할을 동시에 수행합니다. 한편 문래동 철공소 골목에는 예술가 공방과 레트로 카페가 스며들어 산업의 옛 정취와 창작 문화가 공존하는 독특한 풍경을 이룹니다. 경방 영등포공장 터에 들어선 타임스퀘어와 봄마다 벚꽃으로 물드는 여의서로가 상징하듯, 영등포는 근대 공업의 유산 위에 현대 도심의 활력을 겹쳐 놓은 자치구입니다.</p>
+      </section>
+      <section id="r-facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 371,055명 (2026)</li>
+          <li>면적: 24.56 km²</li>
+          <li>신설: 1943년 6월 10일</li>
+        </ul>
+      </section>
+      <section id="r-history">
+        <h2>역사</h2>
+        <p>영등포는 본래 경기도 시흥군에 속한 한강 하류의 물가 마을이었으며, 지명은 여의도 샛강에서 성행하던 영등굿 제의에서 유래했습니다. 1936년 4월 시흥군 영등포읍과 북면 일부, 고양군 용강면 일부가 경성부에 편입되면서 한강 이남에서 처음으로 서울에 들어온 지역이 되었습니다. 이 무렵부터 방직·기계 공장이 들어서 1930년대에는 자족적인 신생 공업도시의 기반을 갖추었고, 이후 문래동과 양평동 일대가 서울 대표 제조업 지구로 성장했습니다. 1943년 6월 경성부 영등포구역소가 설치되었고, 1946년 서울시 영등포구로 이름이 바뀌었습니다. 광복 이후 강남·강서·구로·관악·동작·양천 등이 순차적으로 이 구에서 분리되어 나가며 오늘날의 경계로 좁혀졌습니다. 한때 모래섬이던 여의도는 1968년 개발과 함께 국회·방송·금융의 중심으로 탈바꿈해 영등포의 위상을 새롭게 규정했습니다.</p>
+      </section>
+      <section id="r-geography">
+        <h2>지리·자연환경</h2>
+        <p>영등포구는 서울 한강 이남 서부에 위치하며, 동쪽으로 동작구, 서쪽으로 양천구, 남서쪽으로 구로구, 북쪽으로는 한강 건너 마포구·용산구와 마주합니다. 면적은 약 24.56제곱킬로미터이고 대부분 낮은 평지로 이루어져 뚜렷한 산지는 거의 없습니다. 북쪽 경계를 한강이 지나고 서쪽에는 안양천, 남쪽에는 도림천이 흘러 세 물길이 구의 골격을 이룹니다. 한강 위에 떠 있는 여의도는 이 구에서 가장 넓은 동으로, 홀로 전체 면적의 약 34퍼센트를 차지합니다. 한강과 안양천이 만나는 하구 저지대에는 밤섬 철새 서식처와 습지가 남아 도심 속 생태 공간으로 보전되고 있습니다. 평탄한 지형과 풍부한 수변은 여의도·안양천 일대에 넓은 강변 공원과 자전거길이 조성되는 바탕이 되었습니다.</p>
+      </section>
+      <section id="r-characteristics">
+        <h2>지역 특징</h2>
+        <p>영등포구의 인구는 2026년 기준 약 37만 명으로, 18개 행정동과 34개 법정동으로 나뉘어 있습니다. 도시의 성격은 크게 세 얼굴로 나타나는데, 여의도는 국회·증권거래소·방송사·대형 증권사가 모인 정치와 금융, 언론의 중심입니다. 문래동과 양평동 일대는 오랜 소규모 철공소와 기계 가공업이 밀집한 서울의 대표 제조업 지구로, 최근에는 예술창작촌으로도 이름을 알리고 있습니다. 영등포역과 타임스퀘어를 낀 원도심은 백화점·재래시장·상가가 뒤섞인 서남권 최대 상업 거점으로 유동 인구가 매우 많습니다. 구목은 은행나무, 구화는 목련, 구조는 청둥오리로 지정되어 한강변 도시의 상징으로 삼고 있습니다. 이처럼 금융 업무지구와 노후 공업지구, 상업 원도심이 한 구 안에 공존하는 점이 영등포만의 뚜렷한 개성입니다.</p>
+      </section>
+      <section id="r-landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>여의도 63빌딩</strong> — 1985년 준공된 여의도의 대표 초고층 빌딩으로, 한때 국내 최고 높이를 자랑했으며 고층 전망대와 아쿠아리움, 아트홀 등을 갖춘 랜드마크입니다.</li>
+          <li><strong>국회의사당</strong> — 1975년 여의도에 준공된 대한민국 입법부의 본거지로, 돔 지붕의 본관과 넓은 잔디광장이 여의도 정치 1번지의 상징 경관을 이룹니다.</li>
+          <li><strong>타임스퀘어</strong> — 옛 경방 영등포공장·경방필백화점 터에 조성되어 2009년 문을 연 대형 복합몰로, 백화점과 대형마트, 극장, 호텔과 약 200여 개 매장이 모인 서남권 쇼핑 명소입니다.</li>
+          <li><strong>문래창작촌</strong> — 문래동 철공소 골목에 예술가들의 공방과 갤러리, 개성 있는 카페가 들어서면서 형성된 예술창작 지구로, 산업의 흔적과 현대 미술이 뒤섞인 골목 풍경으로 유명합니다.</li>
+        </ul>
+      </section>
+      <section id="r-heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>영등포 여의도 봄꽃축제</strong> — 2005년부터 매년 4월 여의서로 벚꽃길과 한강공원 일대에서 열리는 서울 대표 봄 축제로, 국회 뒤편 약 1.7킬로미터 벚꽃길을 중심으로 공연과 문화 프로그램이 펼쳐집니다.</li>
+          <li><strong>영등포아트홀·영등포문화재단</strong> — 영등포문화재단이 운영하는 공연·전시 시설로, 지역 예술가의 무대와 시민 문화강좌, 봄꽃축제 등 구의 문화예술 사업을 총괄하는 거점입니다.</li>
+          <li><strong>KBS 방송국</strong> — 여의도에 자리한 공영방송 한국방송공사의 본사로, 방송 스튜디오와 KBS 아트홀 등을 갖춰 여의도를 한국 방송 문화의 중심지로 만든 시설입니다.</li>
+          <li><strong>문래예술공장</strong> — 문래동 예술창작촌과 연계해 운영되는 서울시 창작 지원 공간으로, 입주 작가의 작업실과 공연장, 전시실을 두어 신진 예술가의 창작 활동을 뒷받침합니다.</li>
+        </ul>
+      </section>
+      <section id="r-nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>여의도공원</strong> — 과거 아스팔트 광장이던 여의도광장을 1999년 도심 숲으로 바꾼 공원으로, 한국 전통의 숲과 잔디마당, 자연생태 숲을 갖춰 도심 직장인과 시민의 휴식처가 됩니다.</li>
+          <li><strong>여의도 한강공원</strong> — 한강을 끼고 조성된 대표 강변 공원으로, 물빛무대와 수영장, 자전거길과 유람선 선착장을 갖춰 봄 벚꽃과 여름 물놀이로 사시사철 붐빕니다.</li>
+          <li><strong>선유도공원</strong> — 옛 정수장 시설을 재활용해 만든 한강 위 생태공원으로, 콘크리트 구조물과 물·식물이 어우러진 재생 건축의 명소이자 선유교 야경으로 사랑받습니다.</li>
+          <li><strong>안양천·도림천 산책로</strong> — 구의 서쪽과 남쪽을 흐르는 안양천과 도림천을 따라 이어진 수변 산책·자전거길로, 봄이면 벚꽃과 유채가 피어 주민들의 대표적인 근린 휴식 공간이 됩니다.</li>
+          <li><strong>영등포공원</strong> — 옛 OB맥주 영등포공장 터에 조성된 근린공원으로, 공장에서 쓰던 담금솥을 상징물로 남겨 지역 산업의 역사를 기억하게 하는 도심 쉼터입니다.</li>
+        </ul>
+      </section>
+      <section id="r-transport">
+        <h2>교통</h2>
+        <p>영등포구는 서울 서남권 철도 교통의 요충지로, 경부선 무궁화·ITX 등 일반 열차가 서는 영등포역이 도심과 지방을 잇는 관문 역할을 합니다. 지하철 1호선은 대방·신길·영등포역을 지나고, 2호선은 문래·영등포구청·당산역을 거칩니다. 5호선은 양평·영등포구청·영등포시장·신길·여의도·여의나루역을 이으며 5호선과 9호선이 만나는 여의도역은 환승 거점입니다. 9호선은 선유도·당산·국회의사당·여의도·샛강역을 지나 강남 방면 급행으로 연결되고, 7호선 대림·신풍역, 경전철 신림선 샛강역도 구를 지납니다. 당산역과 선유도역 사이 당산철교로 2호선이 한강을 건너고, 강변북로·올림픽대로·서부간선도로와 여의도의 여러 한강 다리가 도로망의 축을 이룹니다.</p>
+      </section>
+      <section id="r-symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 목련</li>
+          <li>구목(나무): 은행나무</li>
+          <li>구조(새): 청둥오리</li>
+        </ul>
+      </section>
+      <section id="r-faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>영등포구라는 이름은 어디서 유래했나요?</summary>
+            <p>음력 이월 여의도 샛강변에서 벌어지던 영등굿의 &#x27;영등&#x27;과 물가 마을을 뜻하는 &#x27;포(浦)&#x27;가 합쳐진 이름으로, 한강 하류의 옛 나루 마을에서 비롯되었습니다.</p>
+          </details>
+          <details>
+            <summary>여의도가 영등포구에 속하나요?</summary>
+            <p>네, 여의도동은 영등포구에서 가장 넓은 동으로 구 전체 면적의 약 34퍼센트를 차지하며 국회·금융가·방송사가 모여 있습니다.</p>
+          </details>
+          <details>
+            <summary>영등포구의 인구와 면적은 어느 정도인가요?</summary>
+            <p>2026년 기준 인구는 약 37만 명이며 면적은 약 24.56제곱킬로미터로, 18개 행정동과 34개 법정동으로 구성되어 있습니다.</p>
+          </details>
+          <details>
+            <summary>문래창작촌은 어떤 곳인가요?</summary>
+            <p>문래동의 오래된 철공소 골목에 예술가 공방과 갤러리, 카페가 들어서며 형성된 예술창작 지구로, 산업의 흔적과 현대 예술이 어우러진 골목 명소입니다.</p>
+          </details>
+          <details>
+            <summary>여의도 봄꽃축제는 언제 열리나요?</summary>
+            <p>매년 4월 초 여의서로 벚꽃길과 한강공원 일대에서 영등포구와 영등포문화재단이 주관해 열리며, 국회 뒤편 벚꽃길이 중심 무대입니다.</p>
+          </details>
+          <details>
+            <summary>영등포역과 여의도로 가는 지하철은 무엇인가요?</summary>
+            <p>영등포역은 지하철 1호선과 경부선 일반열차가 서고, 여의도역은 5호선과 9호선이 만나는 환승역으로 도심과 강남 방면을 편리하게 연결합니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="r-links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.ydp.go.kr/" rel="noopener">영등포구청 공식 홈페이지</a></li>
+          <li><a href="https://www.ydpcf.or.kr/" rel="noopener">영등포문화재단</a></li>
+        </ul>
+      </section>
+      <section id="r-github">
+        <h2>GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/kr-seoul-yeongdeungpo" rel="noopener">GitHub 조직: kr-seoul-yeongdeungpo</a></li>
+          <li><a href="https://github.com/kr-seoul-yeongdeungpo/kr-seoul-yeongdeungpo.github.io" rel="noopener">이 사이트 저장소</a></li>
+        </ul>
+      </section>
+      <section id="r-sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC" rel="noopener">영등포구 - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.ydp.go.kr/tour/contents.do?key=5313" rel="noopener">영등포구청 문화관광 - 문래창작촌</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.ydpcf.or.kr/festival/festival.do" rel="noopener">영등포 여의도 봄꽃축제 - 영등포문화재단</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.ydp.go.kr/www/contents.do?key=2882" rel="noopener">영등포구청 일반현황·인구통계</a> (조회 2026-07-08)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
   <aside class="cg-sponsors" aria-label="후원 파트너 상세">
     <p class="cg-spon-head"><span class="cg-ad">AD</span> 후원 파트너 <small>이 링크는 광고이며 편집상의 추천이 아닙니다 (rel=&quot;sponsored&quot;).</small></p>
     <ul class="cg-spon-grid">
